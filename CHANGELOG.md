@@ -6,6 +6,12 @@ release is coming. Download files are on the
 
 <!-- releases -->
 
+## 0.1.3 - 2026-11-10
+
+A calmer, more polished Atlas: a slimmer sidebar with its four buttons in one row, clearer charts and icons, and smoother sheets.
+Sessions are grouped by folder, long names wrap instead of scrolling sideways, and the editor can fill the window.
+
+
 ## 0.1.2 - 2026-11-10
 
 Updates no longer stop with "Error opening file for writing" while Claude Code is using Atlas.
