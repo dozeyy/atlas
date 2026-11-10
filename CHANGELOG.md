@@ -6,6 +6,11 @@ release is coming. Download files are on the
 
 <!-- releases -->
 
+## 0.1.2 - 2026-11-10
+
+Updates no longer stop with "Error opening file for writing" while Claude Code is using Atlas.
+
+
 ## 0.1.1 - 2026-11-10
 
 Atlas now shows up when you search for it from the Start menu.
