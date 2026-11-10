@@ -6,6 +6,12 @@ release is coming. Download files are on the
 
 <!-- releases -->
 
+## 0.1.4 - 2026-11-10
+
+A calmer, more polished Atlas: a slimmer sidebar, clearer charts and icons, smoother sheets, and sessions grouped by folder.
+On a Mac, Settings and Wrapped now stay inside the folded sidebar.
+
+
 ## 0.1.3 - 2026-11-10
 
 A calmer, more polished Atlas: a slimmer sidebar with its four buttons in one row, clearer charts and icons, and smoother sheets.
