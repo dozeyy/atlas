@@ -6,6 +6,11 @@ release is coming. Download files are on the
 
 <!-- releases -->
 
+## 0.1.8 - 2026-11-11
+
+When a chart hover card opens below, it now sits under the bar, square or point, so you can still see what you are pointing at.
+
+
 ## 0.1.7 - 2026-11-11
 
 Chart hover cards near the top of a page now open below the point instead of being cut off.
