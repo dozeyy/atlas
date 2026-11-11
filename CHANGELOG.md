@@ -6,6 +6,13 @@ release is coming. Download files are on the
 
 <!-- releases -->
 
+## 0.1.5 - 2026-11-11
+
+A calmer, more polished Atlas: a slimmer sidebar, clearer charts and icons, smoother sheets, and sessions grouped by folder.
+On a Mac, the top strip holds only the window buttons, and the sidebar buttons sit in one row above Dashboard (a neat square when the sidebar is folded).
+On a Mac, Atlas now finds Claude Code installed with Homebrew, npm, Volta or nvm, even when opened from the Dock.
+
+
 ## 0.1.4 - 2026-11-10
 
 A calmer, more polished Atlas: a slimmer sidebar, clearer charts and icons, smoother sheets, and sessions grouped by folder.
