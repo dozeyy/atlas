@@ -6,6 +6,13 @@ release is coming. Download files are on the
 
 <!-- releases -->
 
+## 0.1.6 - 2026-11-11
+
+A new switch in Settings counts cache reads and writes in your token totals, and hovering any token number shows every kind added up.
+The Library explains an empty catalog and adds the official one in a click.
+On a Mac, the launch animation now hands straight to the window, and the first launch no longer flashes an error while your chats are read.
+
+
 ## 0.1.5 - 2026-11-11
 
 A calmer, more polished Atlas: a slimmer sidebar, clearer charts and icons, smoother sheets, and sessions grouped by folder.
