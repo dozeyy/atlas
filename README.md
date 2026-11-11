@@ -37,7 +37,7 @@ is not published here.
 
 | | |
 |---|---|
-| <img src="assets/screenshots/now-light.png" alt="Now: the chats running right now" width="400"> | <img src="assets/screenshots/sessions-light.png" alt="Sessions: every chat, searchable" width="400"> |
+| <img src="assets/screenshots/toolkit-light.png" alt="Toolkit: every skill, agent, hook and MCP server, and what your setup costs" width="400"> | <img src="assets/screenshots/sessions-light.png" alt="Sessions: every chat, searchable" width="400"> |
 | **Now**: what is running, what is waiting for you, what just finished. | **Sessions**: every chat with its tokens, cost estimate and helpers. Search titles, projects and messages. |
 | <img src="assets/screenshots/sessions-dark.png" alt="Sessions in the dark theme with a pick up where you left off card" width="400"> | <img src="assets/screenshots/wrapped-dark.png" alt="Wrapped: your busiest day" width="400"> |
 | **Light, dark and silver** themes, or follow Windows and macOS. | **Wrapped**: your year as a short, quiet story, with a recap card you can save as an image. |
