@@ -6,6 +6,12 @@ release is coming. Download files are on the
 
 <!-- releases -->
 
+## 0.1.7 - 2026-11-11
+
+Chart hover cards near the top of a page now open below the point instead of being cut off.
+On a Mac, the Keyboard shortcuts sheet no longer runs long key names into the text beside them.
+
+
 ## 0.1.6 - 2026-11-11
 
 A new switch in Settings counts cache reads and writes in your token totals, and hovering any token number shows every kind added up.
