@@ -77,7 +77,9 @@ Then type `/atlas`, or just ask "what's my usage this week".
 There is nothing else to set up. The first time, the skill finds the `atlas-usage` program that
 comes with the app, or downloads the right build for your computer once and checks it against a
 checksum that is fixed inside the plugin. A download that does not match is deleted and never
-run. Details are in [the skill guide](docs/skill.md).
+run. It also checks that the release's checksum list is signed by the Atlas release key. To see
+which copy it uses, ask Claude to run `launcher-doctor`. Details are in
+[the skill guide](docs/skill.md).
 
 You can install the skill without the app. It works in Claude Code in the terminal, the desktop
 app's Code tab and the IDE extensions. It does not work in claude.ai web chat, because it reads
@@ -220,6 +222,8 @@ It is built not to: every write makes a backup first, writes atomically, keeps t
 | `atlas-usage:` line with "could not download" | Check your internet connection and try again. The download comes from this repository's releases. |
 | "this copy of the skill has no version" | Install the plugin with `/plugin install atlas@atlas` instead of copying the folder by hand. |
 | A checksum message | The download did not match the plugin's pinned checksum and was deleted on purpose. Update the plugin (`/plugin marketplace update atlas`) and try again. If it persists, [open an issue](https://github.com/dozeyy/atlas/issues). |
+| "not signed by the Atlas key" or "does not list this program" | The release's signed checksum list did not back up the download, so it was deleted and not run. Try again later, or update the plugin. If it persists, [open an issue](https://github.com/dozeyy/atlas/issues). |
+| The skill runs the wrong copy, or can't find one | Ask Claude to run the launcher with `launcher-doctor`. It lists each place it looks, what it found and which copy it would run, and runs nothing. To force one program, set `ATLAS_USAGE_BIN` to its path. |
 | "No release yet" for this plugin version | The matching program is not published for that version yet. Update the plugin, or install the app, which includes it. |
 | Chart shows boxes or question marks | Ask for plain bars: `/atlas this week --ascii`, or set `ATLAS_ASCII=1`. |
 | The first `/atlas` run takes a while | It is indexing every chat once. Later runs take under a second. |
@@ -231,6 +235,8 @@ It is built not to: every write makes a backup first, writes atomically, keeps t
 ## Uninstall
 
 - **Skill:** `/plugin uninstall atlas@atlas`, and `/plugin marketplace remove atlas` if you also want the marketplace gone.
+  The program it downloaded stays in a cache folder: `%LOCALAPPDATA%\atlas\skill` on Windows,
+  `~/Library/Caches/atlas/skill` on macOS, `~/.cache/atlas/skill` on Linux. Delete it too if you want it gone.
 - **Connector:** Settings, Claude Code, **Disconnect** in the app (or `claude mcp remove -s user atlas`).
 - **App on Windows:** Settings, Apps, Installed apps, Atlas, Uninstall.
 - **App on macOS:** drag Atlas from Applications to the Trash.

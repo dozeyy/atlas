@@ -22,10 +22,15 @@ Update later with `/plugin marketplace update atlas`.
 
 The skill is a thin launcher around a small program, `atlas-usage`. It uses the first of these it finds:
 
-1. `atlas-usage` on your PATH.
-2. A copy it saved earlier, in a folder named after the plugin version.
-3. The copy that comes with the Atlas app (on Windows, next to `atlas.exe`).
-4. Otherwise it downloads the right build for your computer, once, from the release of the same
+1. `ATLAS_USAGE_BIN`, if you set it: the path of a program file to run instead of searching. It runs
+   as-is, with no checksum check, so only point it at a build you trust.
+2. `atlas-usage` on your PATH.
+3. A copy it saved earlier, in a folder named after the plugin version. It lives in the plugin's data
+   folder when Claude Code gives it one, otherwise in a per-user cache folder:
+   `%LOCALAPPDATA%\atlas\skill` on Windows, `~/Library/Caches/atlas/skill` on macOS,
+   `~/.cache/atlas/skill` on Linux. A saved copy is checked against its pinned checksum every time.
+4. The copy that comes with the Atlas app (on Windows, next to `atlas.exe`).
+5. Otherwise it downloads the right build for your computer, once, from the release of the same
    version number in this repository.
 
 The plugin carries `skill/skills/atlas/bin/checksums.txt`, a list of `<version> <file> <sha256>` lines
@@ -33,7 +38,34 @@ fixed when that version was released. The download is run only if its SHA-256 ma
 Otherwise it is deleted and never run. A plugin version with no pinned line downloads nothing, and the
 launcher tells you to update the plugin.
 
+A copy on PATH or in the app that is the pinned build of an older plugin version is passed over, so
+updating the plugin moves you to the matching build. Your own builds still run. If the download fails,
+the launcher falls back to an older copy and says so.
+
 If the download cannot work (you are offline), the launcher prints one line saying what to do.
+
+### Signature check
+
+On a download the launcher also fetches the release's `SHA256SUMS.txt` and `SHA256SUMS.txt.sig`. The
+list must be signed by the Atlas release key (the same key the app's updater trusts), and it must give
+the program the pinned checksum. If either check fails, the download is deleted and not run. The pinned
+checksum always decides first, so the signature can only add a refusal.
+
+On Windows, PowerShell checks the signature itself. On macOS and Linux it needs OpenSSL 1.1.1 or later.
+macOS's own LibreSSL can't check these signatures, so there the pinned checksum alone decides unless a
+newer OpenSSL (for example Homebrew's `openssl@3`) is on your PATH.
+
+### Which copy is it using?
+
+Ask Claude to run the launcher with `launcher-doctor`, or run it yourself from the plugin's folder:
+
+```
+sh skills/atlas/bin/atlas-usage.sh launcher-doctor
+powershell -NoProfile -ExecutionPolicy Bypass -File skills/atlas/bin/atlas-usage.ps1 launcher-doctor
+```
+
+It lists each place it looks, what it found there, whether signatures can be checked on this computer,
+and which copy it would run. It runs nothing and downloads nothing.
 
 ## Scopes
 
