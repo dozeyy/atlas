@@ -91,7 +91,8 @@ files that only Claude Code keeps on your computer.
 | `/atlas today`, `yesterday` | One day. |
 | `/atlas this week`, `last week` | A week, with activity per day. |
 | `/atlas 7d`, `30d`, `<N>d` | A rolling range. 15 days or more draws the terrain grid. |
-| `/atlas this month`, `last month`, `all` | Longer ranges. |
+| `/atlas this month`, `last month` | Longer ranges. |
+| `/atlas all time` | Your all-time stats: every chat Atlas has counted, even ones Claude Code has since cleaned up. Add `this project` for one project. |
 | `/atlas 2026-11-02..2026-11-07` | A date range. |
 | `/atlas this project` | The same, for the current folder's project. |
 | `/atlas last week vs this week` | Two periods side by side, with the change, by model and by project. |
@@ -200,7 +201,11 @@ Yes, in the Code tab, which is Claude Code. Plain chats in the desktop app are n
 No. It is an estimate at public API prices. If you are on a subscription plan, you do not pay that.
 
 **Why does my usage look lower than I expected?**
-Claude Code deletes old chat files after `cleanupPeriodDays` (30 days by default). Atlas can only count chats that are still on disk. To keep more history, raise that setting in your Claude Code settings.
+Claude Code deletes old chat files after `cleanupPeriodDays` (30 days by default). Once Atlas has
+counted a chat it keeps that chat's numbers in its own index, so all-time totals keep growing after
+Claude Code deletes the file. What Atlas cannot count are chats that were already deleted before it
+first ran. To keep more of those, raise `cleanupPeriodDays` in your Claude Code settings before you
+install, and run `/atlas` (or open the app) now and then so new chats are counted before they go.
 
 **Do the skill and the app have to match versions?**
 They are released together under one version number. The skill fetches the matching build by itself when you update the plugin.

@@ -22,6 +22,9 @@ index lives in Atlas's own data folder (`%LOCALAPPDATA%\atlas\cli` on Windows,
   Activity is a bar per day up to 14 days; from 15 days to 12 weeks it is the app's terrain
   grid (a cell per day, 7 days per row, today bottom-right, `▲` on the busiest day); longer
   ranges are a bar per week, then per month.
+- `/atlas all time` (or "what are my all-time stats") - every chat Atlas has counted. The
+  index keeps a chat's numbers after Claude Code deletes its transcript (`cleanupPeriodDays`),
+  so all-time totals keep growing; only chats deleted before Atlas first ran are missing.
 - `/atlas this project` (or `project last week`) - the same, for the current folder's project.
 - `/atlas last week vs this week` - side by side with the change, by model and by project.
 

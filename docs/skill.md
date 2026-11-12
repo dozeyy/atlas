@@ -44,7 +44,7 @@ If the download cannot work (you are offline), the launcher prints one line sayi
 | `week`, `last-week` | This week so far, last week |
 | `7d`, `30d`, `<N>d` | The past N days |
 | `month`, `last-month` | A calendar month |
-| `all` | Everything still on disk |
+| `all` | All time: every chat Atlas has counted, including chats Claude Code has since deleted (combine with `project` or `--project=<name>` for one project) |
 | `2026-11-02` or `2026-11-02..2026-11-07` | A day or a range |
 | `project` | The current folder's project (add a range, for example `project week`) |
 | `--project=<name>` | A named project |
