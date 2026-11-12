@@ -51,9 +51,9 @@ list must be signed by the Atlas release key (the same key the app's updater tru
 the program the pinned checksum. If either check fails, the download is deleted and not run. The pinned
 checksum always decides first, so the signature can only add a refusal.
 
-On Windows, PowerShell checks the signature itself. On macOS and Linux it needs OpenSSL 1.1.1 or later.
-macOS's own LibreSSL can't check these signatures, so there the pinned checksum alone decides unless a
-newer OpenSSL (for example Homebrew's `openssl@3`) is on your PATH.
+On Windows, PowerShell checks the signature itself. On macOS and Linux it needs OpenSSL 3.0 or later.
+OpenSSL 1.1.1 and macOS's own LibreSSL can't check these signatures, so there the pinned checksum alone
+decides unless a newer OpenSSL (for example Homebrew's `openssl@3`) is on your PATH.
 
 ### Which copy is it using?
 
