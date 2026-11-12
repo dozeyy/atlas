@@ -6,6 +6,11 @@ release is coming. Download files are on the
 
 <!-- releases -->
 
+## 0.1.9 - 2026-11-12
+
+Atlas 0.1.9
+
+
 ## 0.1.8 - 2026-11-11
 
 When a chart hover card opens below, it now sits under the bar, square or point, so you can still see what you are pointing at.
